@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+    <title>家庭作業04</title>
+    <style>
+    h1 {
+            color: blue;
+        }
+   table {
+            border-color: darkslateblue;
+		}
+		th {
+			text-align: center;
+            color:brown;
+		}
+        tr {
+			text-align: center;
+		}
+        td {
+			vertical-align: middle;
+		}
+   </style>
+</head>
+	<body>        
+    <script>
+        document.write('<h1>九九乘法表</h1>'); 
+            document.write('<table border="1">');    
+                for(var i=1;i<=9;++i){    
+                    document.write('<tr>');    
+                        for(var j=1;j<=9;j++){ 
+                            document.write('<td>'+i+'x'+j+'='+(i*j)+'</td>');   
+                        }
+                    document.write('</tr>');
+                }
+        
+            document.write('</table>');
+        </script>
+         
+	</body>
+</html>
