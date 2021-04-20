@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+    <title>家庭作業05</title>
+    <style>
+    h4 {
+			color: red;
+        }
+        div {
+            color: blue;
+            margin: 5px;
+        }
+    table 
+		
+        tr {
+            text-align: center;
+            }
+        
+        td {
+            vertical-align: middle;    
+            }
+			
+        
+   </style>
+</head>
+	<body>
+    <form id="form01">
+        姓名:<input type="text" name="name01" value="林韋廷"><br>
+        收件住址:<input type="text" name="address01" value="台北市中山區敬業三路162巷93號8樓"><br>
+        電話:<input type="tel" name="tel01" value="0912780587"><br>
+        電子郵件:<input type="email" name="email01" value="monicajpopanime13@gmail.com"><br>
+        指定送貨日期:<input type="date" name="date01" ><br>
+        汽水種類:<br><input type="radio" name="fruit" id="fruit01" value="可口可樂600ml(24入/箱)">可口可樂600ml(24入/箱) 469元<br>
+        <input type="radio" name="fruit" id="fruit02" value="雪碧600ml(24入/箱)">雪碧600ml(24入/箱) 499元<br>
+        <input type="radio" name="fruit" id="fruit03" value="芬達600ml(12入/箱)">芬達600ml(12入/箱) 299元<br>
+        <input type="radio" name="fruit" id="fruit03" value="百事可樂600ml(24入/箱)">百事可樂600ml(24入/箱) 479元<br>
+        <input type="radio" name="fruit" id="fruit03" value="七喜汽水600ml(12入/箱)">七喜汽水600ml(12入/箱) 289元<br>
+    </form>
+        
+    <button onclick="shoppingInfo()"><h4>結帳</h4></button>
+        
+    <div id="demo"></div>
+        
+    <script>
+        function shoppingInfo(){
+        var x = document.getElementById("form01");
+        var item = "";
+        var price = 0;
+        var text = "<h4>您的購物資訊如下</h4>";
+        var i;
+            document.write('<table border="1">');
+            document.write("<tr>"); 
+        for (i=0;i<5;i++){
+            switch(i){
+                case 0:
+                    item = "姓名: ";
+                    break;
+                case 1:
+                    item = "收件地址: ";
+                    break;
+                case 2:
+                    item = "電話: ";
+                    break;
+                case 3:
+                    item = "電子郵件: ";
+                    break; 
+                case 4:
+                    item = "指定送貨日期: ";
+                    break;
+            }
+            text +=item + x.elements[i].value + "<br>";
+            
+        }
+         for (i=5;i<=9;i++){
+             
+             if(x.elements[i].checked==true){
+               switch(i){
+                   case 5: price=469; break;
+                   case 6: price=499; break;
+                   case 7: price=299; break;
+                   case 8: price=479; break;
+                   case 9: price=289; break;
+               } 
+            
+               text +="汽水種類:" + x.elements[i].value + "<br>";
+               text +="價格合計:" + price + "元<br>";
+               document.write("<td>" + text + "</td>");
+             }
+             document.getElementById("demo").innerHTML = text;
+         }
+            document.write("</tr>");
+        }
+    </script>
+         
+	</body>
+</html>
